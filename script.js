@@ -4,17 +4,20 @@ let bars = document.querySelector("#bars");
 let clubs = document.querySelector("#clubs");
 let yourFovites = document.querySelector("#yourFovites");
 let favoritesPlacesBody = document.querySelector("#favoritesPlacesBody");
+let slidePlaces = document.querySelector("#slidePlaces");
+let tinderCards = document.querySelector("#tinder--cards");
+
 let favoritesPlaces = [];
 
-//async function to get the json data
+//async function to get the jsonBar and show the places data
 let fetchBar = async () => {
   const res = await fetch("dataBar.json");
   const data = await res.json();
   data.forEach((bar) => {
     let content = document.createElement("div");
     content.innerHTML = `
-                <h4>${bar.barName}</h4>
-                <img src="${bar.barImage}" >
+                <a href="slidePlaces.html">${bar.barName}</a>
+                <img src="${bar.barImage}">
                 <a href="${bar.BarMapUrl}">check on map</a>
             `;
 
@@ -38,6 +41,7 @@ let fetchBar = async () => {
     //function to watch the favorites places!
       yourFovites.addEventListener("click", function () {
         favoritesPlaces.forEach((places) => {
+          //clean array before show the new favorite places
           let contentFavorites = document.createElement("div");
           contentFavorites.innerHTML = `
                 <h4>${places.name}</h4>
@@ -53,6 +57,26 @@ let fetchBar = async () => {
 };
 
 
+//function to create slide Barplaces
+let SlidePlaces = async () => {
+  const res = await fetch("dataBar.json");
+  const data = await res.json();
+  data.forEach((bar) => {
+    let content = document.createElement("div");
+    content.className = "tinder--card";
+    let tinderCard = document.createTextNode("tinder--card");
+    content.appendChild(tinderCard);
+
+    content.innerHTML = `
+                <img src="${bar.barImage}">
+                <h4 href="#slide">${bar.barName}</h4>
+            `;
+
+    tinderCards.append(content);
+  });
+};
+SlidePlaces();
+
 //still need to works in the clubs functionality
 const fetchClub = async () => {
   const res = await fetch("dataClub.json");
@@ -67,6 +91,7 @@ const fetchClub = async () => {
   });
 };
 
+
 bars.addEventListener("click", () => {
   document.querySelector("#places").innerHTML = "";
   document.querySelector("#favoritesPlacesBody").innerHTML = "";
@@ -76,4 +101,9 @@ bars.addEventListener("click", () => {
 clubs.addEventListener("click", () => {
   document.querySelector("#places").innerHTML = "";
   fetchClub();
+});
+
+slidePlaces.addEventListener("click", () => {
+  document.querySelector("#places").innerHTML = "";
+  SlidePlaces();
 });
