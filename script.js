@@ -3,11 +3,10 @@ let places = document.querySelector("#places");
 let bars = document.querySelector("#bars");
 let clubs = document.querySelector("#clubs");
 let yourFovites = document.querySelector("#yourFovites");
-let favoritesPlacesBody = document.querySelector("#favoritesPlacesBody");
+
 let slidePlaces = document.querySelector("#slidePlaces");
 let tinderCards = document.querySelector("#tinder--cards");
 
-let favoritesPlaces = [];
 
 //async function to get the jsonBar and show the places data
 let fetchBar = async () => {
@@ -23,38 +22,9 @@ let fetchBar = async () => {
 
     places.append(content);
 
-    let buttonAddFavorite = document.createElement("button");
-    buttonAddFavorite.textContent = "add to favorite";
 
-    content.appendChild(buttonAddFavorite);
-
-    //push the favorites places in favoritePlaces array
-    buttonAddFavorite.addEventListener("click", function () {
-      favoritesPlaces.push({
-        id: bar.id,
-        name: bar.barName,
-        img: bar.barImage,
-        direction: bar.BarMapUrl,
-      });
-      console.log(favoritesPlaces);
-
-    //function to watch the favorites places!
-      yourFovites.addEventListener("click", function () {
-        favoritesPlaces.forEach((places) => {
-          //clean array before show the new favorite places
-          let contentFavorites = document.createElement("div");
-          contentFavorites.innerHTML = `
-                <h4>${places.name}</h4>
-                <img src="${places.img}" >
-                <a href="${places.direction}">check on map</a>
-            `;
-          document.querySelector("#places").innerHTML = "";
-          favoritesPlacesBody.append(contentFavorites);
-        });
-      });
     });
-  });
-};
+  }
 
 
 //function to create slide Barplaces

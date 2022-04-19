@@ -3,6 +3,10 @@ let tinderContainer = document.querySelector(".tinder");
 let allCards = document.querySelectorAll(".tinder--card");
 let nope = document.getElementById("nope");
 let love = document.getElementById("love");
+let yourFovites = document.querySelector("#yourFovites");
+let favoritesPlacesBody = document.querySelector("#favoritesPlacesBody");
+let favoritesPlaces = [];
+
 //function to create slide Barplaces
 let SlidePlaces = async () => {
   const res = await fetch("dataBar.json");
@@ -19,14 +23,41 @@ let SlidePlaces = async () => {
             `;
 
     tinderCards.append(content);
+    let buttonAddFavorite = document.createElement("button");
+    buttonAddFavorite.textContent = "add to favorite";
 
+    content.appendChild(buttonAddFavorite);
 
+    //push the favorites places in favoritePlaces array
+    buttonAddFavorite.addEventListener("click", function () {
+      favoritesPlaces.push({
+        id: bar.id,
+        name: bar.barName,
+        img: bar.barImage,
+        direction: bar.BarMapUrl,
+      });
+      console.log(favoritesPlaces);
+
+      //function to watch the favorites places!
+      yourFovites.addEventListener("click", function () {
+        favoritesPlaces.forEach((places) => {
+          //clean array before show the new favorite places
+          let contentFavorites = document.createElement("div");
+          contentFavorites.innerHTML = `
+                <h4>${places.name}</h4>
+                <img src="${places.img}" >
+                <a href="${places.direction}">check on map</a>
+            `;
+          favoritesPlacesBody.append(contentFavorites);
+        });
+      });
+    });
   });
 };
 SlidePlaces();
 
 function initCards(card, index) {
-  var newCards = document.querySelectorAll(".tinder--card:not(.removed)");
+  let newCards = document.querySelectorAll(".tinder--card:not(.removed)");
 
   newCards.forEach(function (card, index) {
     card.style.zIndex = allCards.length - index;
@@ -81,7 +112,7 @@ allCards.forEach(function (el) {
     if (keep) {
       event.target.style.transform = "";
     } else {
-      var endX = Math.max(
+      let endX = Math.max(
         Math.abs(event.velocityX) * moveOutWidth,
         moveOutWidth
       );
