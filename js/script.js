@@ -14,9 +14,11 @@ let fetchBar = async () => {
   data.forEach((bar) => {
     let content = document.createElement("div");
     content.innerHTML = `
-                <a href="slidePlaces.html">${bar.barName}</a>
                 <img src="${bar.barImage}">
-                <a href="${bar.BarMapUrl}">check on map</a>
+                <div>
+                <a href="slidePlaces.html">${bar.barName}</a>
+                <a href="${bar.BarMapUrl}">map</a>
+                </div>
             `;
 
     places.append(content);
