@@ -1,14 +1,13 @@
 let tinderCards = document.querySelector("#tinder--cards");
 let tinderContainer = document.querySelector(".tinder");
 let allCards = document.querySelectorAll(".tinder--card");
-let nope = document.getElementById("nope");
 let love = document.getElementById("love");
 let yourFovites = document.querySelector("#yourFovites");
 let favoritesPlacesBody = document.querySelector("#favoritesPlacesBody");
 let bars = document.querySelector("#bars");
-
-
 bars.style.display = "none";
+
+
 //function to create slide Barplaces
 let SlidePlaces = async () => {
   const res = await fetch("dataBar.json");
@@ -46,8 +45,7 @@ let SlidePlaces = async () => {
       yourFovites.addEventListener("click", function () {
         bars.style.display = "";
         tinderCards.innerHTML = "";
-        nope.remove()
-        love.remove()
+        love.style.display = "none";
 
        favoritesPlaces.forEach((places) => {
          //clean array before show the new favorite places
@@ -65,6 +63,8 @@ let SlidePlaces = async () => {
 };
 SlidePlaces();
 
+
+//implementation of the hammer.js library for slider
 function initCards(card, index) {
   let newCards = document.querySelectorAll(".tinder--card:not(.removed)");
 
@@ -92,7 +92,6 @@ allCards.forEach(function (el) {
     if (event.center.x === 0 && event.center.y === 0) return;
 
     tinderContainer.classList.toggle("tinder_love", event.deltaX > 0);
-    tinderContainer.classList.toggle("tinder_nope", event.deltaX < 0);
 
     let xMulti = event.deltaX * 0.03;
     let yMulti = event.deltaY / 80;
@@ -111,7 +110,6 @@ allCards.forEach(function (el) {
   hammertime.on("panend", function (event) {
     el.classList.remove("moving");
     tinderContainer.classList.remove("tinder_love");
-    tinderContainer.classList.remove("tinder_nope");
 
     let moveOutWidth = document.body.clientWidth;
     let keep = Math.abs(event.deltaX) < 80 || Math.abs(event.velocityX) < 0.5;
@@ -170,14 +168,13 @@ function createButtonListener(love) {
   };
 }
 
-let nopeListener = createButtonListener(false);
 let loveListener = createButtonListener(true);
 
-nope.addEventListener("click", nopeListener);
 love.addEventListener("click", loveListener);
 
 bars.addEventListener("click", () => {
   favoritesPlacesBody.innerHTML = ""
   bars.style.display = "none";
+  love.style.display = ""
   SlidePlaces();
 });
