@@ -3,7 +3,6 @@ let places = document.querySelector("#places");
 let bars = document.querySelector("#bars");
 let clubs = document.querySelector("#clubs");
 let yourFovites = document.querySelector("#yourFovites");
-
 let slidePlaces = document.querySelector("#slidePlaces");
 let tinderCards = document.querySelector("#tinder--cards");
 
@@ -23,27 +22,6 @@ let fetchBar = async () => {
     places.append(content);
   });
 };
-
-
-//function to create slide Barplaces
-let SlidePlaces = async () => {
-  const res = await fetch("dataBar.json");
-  const data = await res.json();
-  data.forEach((bar) => {
-    let content = document.createElement("div");
-    content.className = "tinder--card";
-    let tinderCard = document.createTextNode("tinder--card");
-    content.appendChild(tinderCard);
-
-    content.innerHTML = `
-                <img src="${bar.barImage}">
-                <h4 href="#slide">${bar.barName}</h4>
-            `;
-
-    tinderCards.append(content);
-  });
-};
-SlidePlaces();
 
 //still need to works in the clubs functionality
 const fetchClub = async () => {
@@ -68,9 +46,4 @@ bars.addEventListener("click", () => {
 clubs.addEventListener("click", () => {
   document.querySelector("#places").innerHTML = "";
   fetchClub();
-});
-
-slidePlaces.addEventListener("click", () => {
-  document.querySelector("#places").innerHTML = "";
-  SlidePlaces();
 });
