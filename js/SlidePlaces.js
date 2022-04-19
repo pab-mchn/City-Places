@@ -5,7 +5,10 @@ let nope = document.getElementById("nope");
 let love = document.getElementById("love");
 let yourFovites = document.querySelector("#yourFovites");
 let favoritesPlacesBody = document.querySelector("#favoritesPlacesBody");
+let bars = document.querySelector("#bars");
 
+
+bars.style.display = "none";
 //function to create slide Barplaces
 let SlidePlaces = async () => {
   const res = await fetch("dataBar.json");
@@ -41,6 +44,11 @@ let SlidePlaces = async () => {
 
       //function to watch the favorites places!
       yourFovites.addEventListener("click", function () {
+        bars.style.display = "";
+        tinderCards.innerHTML = "";
+        nope.remove()
+        love.remove()
+
        favoritesPlaces.forEach((places) => {
          //clean array before show the new favorite places
          let contentFavorites = document.createElement("div");
@@ -167,3 +175,9 @@ let loveListener = createButtonListener(true);
 
 nope.addEventListener("click", nopeListener);
 love.addEventListener("click", loveListener);
+
+bars.addEventListener("click", () => {
+  favoritesPlacesBody.innerHTML = ""
+  bars.style.display = "none";
+  SlidePlaces();
+});
