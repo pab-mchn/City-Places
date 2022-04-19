@@ -5,7 +5,6 @@ let nope = document.getElementById("nope");
 let love = document.getElementById("love");
 let yourFovites = document.querySelector("#yourFovites");
 let favoritesPlacesBody = document.querySelector("#favoritesPlacesBody");
-let favoritesPlaces = [];
 
 //function to create slide Barplaces
 let SlidePlaces = async () => {
@@ -28,6 +27,8 @@ let SlidePlaces = async () => {
 
     content.appendChild(buttonAddFavorite);
 
+
+    let favoritesPlaces = [];
     //push the favorites places in favoritePlaces array
     buttonAddFavorite.addEventListener("click", function () {
       favoritesPlaces.push({
@@ -40,16 +41,16 @@ let SlidePlaces = async () => {
 
       //function to watch the favorites places!
       yourFovites.addEventListener("click", function () {
-        favoritesPlaces.forEach((places) => {
-          //clean array before show the new favorite places
-          let contentFavorites = document.createElement("div");
-          contentFavorites.innerHTML = `
+       favoritesPlaces.forEach((places) => {
+         //clean array before show the new favorite places
+         let contentFavorites = document.createElement("div");
+         contentFavorites.innerHTML = `
                 <h4>${places.name}</h4>
                 <img src="${places.img}" >
                 <a href="${places.direction}">check on map</a>
             `;
-          favoritesPlacesBody.append(contentFavorites);
-        });
+         favoritesPlacesBody.append(contentFavorites);
+       });
       });
     });
   });
