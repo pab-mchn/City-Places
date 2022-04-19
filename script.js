@@ -21,10 +21,8 @@ let fetchBar = async () => {
             `;
 
     places.append(content);
-
-
-    });
-  }
+  });
+};
 
 
 //function to create slide Barplaces
@@ -64,7 +62,6 @@ const fetchClub = async () => {
 
 bars.addEventListener("click", () => {
   document.querySelector("#places").innerHTML = "";
-  document.querySelector("#favoritesPlacesBody").innerHTML = "";
   fetchBar();
 });
 
