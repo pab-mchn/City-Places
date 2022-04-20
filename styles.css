@@ -1,27 +1,3 @@
-/*.cat-single-card {
-  width: 200px;
-  height: 73px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin: 0 0 15px 0;
-  border-radius: 10px;
-  background-color: #ED462F;
-  margin: 15px;
-}
-
-.cat-single-card:hover {
-  background-color: black;
-}
-
-.cat-single-card>a {
-  color: var(--white);
-  font-size: 13px;
-  text-decoration: none;
-}*/
-
-/*index places*/
 body {
   background: #fff;
   font-family: sans-serif;
@@ -75,6 +51,7 @@ body {
   }
 }
 
+/*slider places*/
 .tinder {
   width: 100vw;
   height: 100vh;
