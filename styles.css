@@ -21,6 +21,12 @@
   text-decoration: none;
 }*/
 
+/*index places*/
+body {
+  background: #fff;
+  font-family: sans-serif;
+}
+
 .banner-places {
   background-size: cover;
   background-position: center;
@@ -67,26 +73,4 @@
   #places {
     grid-template-columns: 1fr 1fr 1fr;
   }
-}
-
-.card-category {
-  height: 180px;
-  border-radius: 20px;
-  color: white;
-}
-
-.cards-title {
-  padding: 80px;
-}
-
-.cards-title>a {
-  color: white;
-  font-size: 18px;
-}
-
-.cards-title>a:hover {
-  color: white;
-  font-size: 20px;
-  color: #ED462F;
-  text-decoration: none;
 }
