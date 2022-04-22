@@ -2,11 +2,12 @@ body {
   background: #fff;
 }
 
-.banner-places {
-  margin-top: 15vh;
+/*bars styles*/
+.container-bar-places {
+  margin-top: 10vh;
 }
 
-#places {
+#bar-places {
 height: 200px;
 overflow-y: hidden;
 overflow-x: auto;
@@ -15,7 +16,7 @@ padding: 10px;
 white-space: nowrap;
 }
 
-#places > div{
+#bar-places > div {
 width: 100px;
 height: 50px;
 margin: 0 20px 0 0;
@@ -25,7 +26,7 @@ display: inline;
 text-align: center;
 }
 
-#places>div >a {
+#bar-places > div > a {
 position: absolute;
 bottom: 65px;
 left: 50%;
@@ -37,6 +38,46 @@ text-decoration: none;
 ::-webkit-scrollbar {
   display: none;
 }
+
+/*clubs styles*/
+
+.container-club-places {
+  margin-top: 10vh;
+}
+
+#club-places {
+  height: 300px;
+  overflow-y: hidden;
+  overflow-x: auto;
+  width: auto;
+  padding: 10px;
+  white-space: nowrap;
+}
+
+#club-places>div {
+width: 100px;
+height: 50px;
+margin: 0 20px 0 0;
+padding: 0px;
+position: relative;
+display: inline;
+text-align: center;
+}
+
+#club-places>div>a {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-decoration: none;
+}
+
+#club-places>div>img{
+  height: 300px;
+  width: 250px;
+}
+
 
 /*slider places*/
 .tinder {

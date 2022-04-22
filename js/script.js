@@ -1,5 +1,6 @@
 // capture the html tags
-let places = document.querySelector("#places");
+let barPlaces = document.querySelector("#bar-places");
+let clubPlaces = document.querySelector("#club-places");
 let bars = document.querySelector("#bars");
 let clubs = document.querySelector("#clubs");
 let yourFovites = document.querySelector("#yourFovites");
@@ -18,7 +19,7 @@ let fetchBar = async () => {
                 <a href="slidePlaces.html">${bar.barName}</a>
             `;
 
-    places.append(content);
+    barPlaces.append(content);
   });
 };
 fetchBar();
@@ -30,20 +31,21 @@ const fetchClub = async () => {
   data.forEach((club) => {
     const content = document.createElement("div");
     content.innerHTML = `
-                <h4>${club.clubName}</h4>
                 <img src="${club.clubImage}" >
+                 <a href="slidePlaces.html">${club.clubName}</a>
             `;
-    places.append(content);
+    clubPlaces.append(content);
   });
 };
 
+fetchClub();
 
 bars.addEventListener("click", () => {
-  document.querySelector("#places").innerHTML = "";
+  document.querySelector("#club-places").innerHTML = "";
   fetchBar();
 });
 
 clubs.addEventListener("click", () => {
-  document.querySelector("#places").innerHTML = "";
+  document.querySelector("#bar-places").innerHTML = "";
   fetchClub();
 });
