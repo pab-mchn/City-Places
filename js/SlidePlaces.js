@@ -24,11 +24,11 @@ let SlidePlaces = async () => {
             `;
 
     tinderCards.append(content);
+
     let buttonAddFavorite = document.createElement("button");
     buttonAddFavorite.textContent = "add to favorite";
 
     content.appendChild(buttonAddFavorite);
-
 
     let favoritesPlaces = [];
     //push the favorites places in favoritePlaces array

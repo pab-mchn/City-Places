@@ -16,12 +16,12 @@ let fetchBar = async () => {
     content.innerHTML = `
                 <a href="slidePlaces.html">${bar.barName}</a>
                 <img src="${bar.barImage}">
-                <a href="${bar.BarMapUrl}">map</a>
             `;
 
     places.append(content);
   });
 };
+fetchBar();
 
 //still need to works in the clubs functionality
 const fetchClub = async () => {

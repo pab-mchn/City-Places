@@ -21,6 +21,7 @@ body {
   text-align: center;
   color: white;
 }
+
  @media (min-width: 100px) and (max-width: 575px) {
   #places {
     grid-template-columns: 1fr;
@@ -58,44 +59,21 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  align-items: center;
   position: relative;
-  opacity: 0;
   transition: opacity 0.1s ease-in-out;
 }
 
-.loaded.tinder {
-  opacity: 1;
-}
-.tinder_love .fa-heart {
-  opacity: 0.7;
-  transform: scale(1);
-}
-
-.tinder_nope .fa-remove {
-  opacity: 0.7;
-  transform: scale(1);
-}
-
-.tinder--cards {
-  flex-grow: 1;
-  padding-top: 40px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  z-index: 1;
-}
-
 .tinder--card {
-  display: inline-block;
+  display: inline;
   width: 90vw;
-  max-width: 400px;
-  height: 70vh;
+  width: 400px;
   background: #FFFFFF;
-  padding-bottom: 40px;
   border-radius: 8px;
   overflow: hidden;
   position: absolute;
+  top: 10vh;
+  text-align: center;
   will-change: transform;
   transition: all 0.3s ease-in-out;
   cursor: -webkit-grab;
@@ -110,11 +88,12 @@ body {
   cursor: grabbing;
 }
 
-.tinder--card img {
+.tinder--card > img {
   max-width: 100%;
   pointer-events: none;
+  height: 300px;
 }
 #love{
   position: absolute;
-  top:300px;
+  top:373px;
 }
