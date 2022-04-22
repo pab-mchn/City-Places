@@ -94,6 +94,11 @@ text-align: center;
   transition: opacity 0.1s ease-in-out;
 }
 
+#tinder--cards{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
 .tinder--card {
   display: inline;
   width: 90vw;
@@ -122,8 +127,4 @@ text-align: center;
   max-width: 100%;
   pointer-events: none;
   height: 300px;
-}
-#love{
-  position: absolute;
-  top:373px;
 }
