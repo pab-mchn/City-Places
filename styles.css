@@ -14,12 +14,24 @@ width: auto;
 padding: 10px;
 white-space: nowrap;
 }
+
 #places > div{
 width: 100px;
 height: 50px;
-margin: 0 10px 0 0;
+margin: 0 20px 0 0;
 padding: 0px;
+position: relative;
 display: inline;
+text-align: center;
+}
+
+#places>div >a {
+position: absolute;
+bottom: 65px;
+left: 50%;
+transform: translate(-50%, -50%);
+color: #fff;
+text-decoration: none;
 }
 
 ::-webkit-scrollbar {
