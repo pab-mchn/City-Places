@@ -2,6 +2,9 @@ body {
   background: #fff;
 }
 
+h2{
+  color: #999
+}
 /*bars styles*/
 .container-bar-places {
   margin-top: 10vh;
