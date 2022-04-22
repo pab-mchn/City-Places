@@ -1,55 +1,29 @@
 body {
   background: #fff;
-  font-family: sans-serif;
 }
 
 .banner-places {
-  background-size: cover;
-  background-position: center;
-  margin-left: 10%;
-  margin-right: 10%;
-  border-radius: 30px;
-  position: relative;
-  z-index: 99;
-  margin-bottom: 20px;
+  margin-top: 15vh;
 }
 
 #places {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  text-align: center;
-  color: white;
+height: 200px;
+overflow-y: hidden;
+overflow-x: auto;
+width: auto;
+padding: 10px;
+white-space: nowrap;
+}
+#places > div{
+width: 100px;
+height: 50px;
+margin: 0 10px 0 0;
+padding: 0px;
+display: inline;
 }
 
- @media (min-width: 100px) and (max-width: 575px) {
-  #places {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (min-width: 576px) {
-  #places {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (min-width: 768px) {
-  #places {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (min-width: 992px) {
-  #places {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-@media (min-width: 1200px) {
-  #places {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+::-webkit-scrollbar {
+  display: none;
 }
 
 /*slider places*/
@@ -68,7 +42,7 @@ body {
   display: inline;
   width: 90vw;
   width: 400px;
-  background: #FFFFFF;
+  background: #905252;
   border-radius: 8px;
   overflow: hidden;
   position: absolute;
