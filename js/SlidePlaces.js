@@ -5,6 +5,7 @@ let yourFovites = document.querySelector("#yourFovites");
 let favoritesPlacesBody = document.querySelector("#favoritesPlacesBody");
 let bars = document.querySelector("#bars");
 let love = document.querySelector("#love");
+let buttonAddFavorite = document.querySelector("#addFavorite");
 
 bars.style.display = "none";
 
@@ -26,10 +27,10 @@ let SlidePlaces = async () => {
 
     tinderCards.append(content);
 
-    let buttonAddFavorite = document.createElement("button");
-    buttonAddFavorite.textContent = "add to favorite";
-    buttonAddFavorite.id = "addFavorite"
+    let buttonAddFavorite = document.createElement("i");
 
+    buttonAddFavorite.id = "addFavorite"
+    buttonAddFavorite.className = "fa-solid fa-heart";
     content.appendChild(buttonAddFavorite);
 
     let favoritesPlaces = [];

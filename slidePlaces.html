@@ -5,23 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="StyleSheet" href="styles.css" type="text/css" media="screen" />
+    <script src="https://kit.fontawesome.com/ee3d08c0a8.js" crossorigin="anonymous"></script>
     <title>Slide Places</title>
   </head>
   <body>
+    <nav>
+      <a href="index.html"><i class="fa-solid fa-angle-left"></i></a>
+      <i class="fa-solid fa-heart" id="yourFovites"></i>
+    </nav>
     <button id="bars">bars</button>
-    <button id="yourFovites">Your Favorites</button>
     <div id="favoritesPlacesBody"></div>
 
     <div class="tinder">
       <div class="tinder--status">
-        <i class="fa fa-heart"></i>
 
         <div id="tinder--cards">
         </div>
 
       </div>
        <div class="tinder--buttons">
-            <button id="love">Next</button>
+            <i class="fa-solid fa-xmark" id="love"></i>
           </div>
     </div>
     <script src="./js/SlidePlaces.js"></script>
