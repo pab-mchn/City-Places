@@ -9,8 +9,18 @@ h2{
 nav{
   height: 45px;
   background-color: #EAD42F;
-
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
 }
+#backHome{
+  margin-left: 20px;
+}
+
+#yourFavorites {
+  margin-right: 20px;
+}
+
 /*bars styles*/
 .container-bar-places {
   margin-top: 10vh;

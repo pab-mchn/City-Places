@@ -1,7 +1,7 @@
 let tinderCards = document.querySelector("#tinder--cards");
 let tinderContainer = document.querySelector(".tinder");
 let allCards = document.querySelectorAll(".tinder--card");
-let yourFovites = document.querySelector("#yourFovites");
+let yourFavorites = document.querySelector("#yourFavorites");
 let favoritesPlacesBody = document.querySelector("#favoritesPlacesBody");
 let bars = document.querySelector("#bars");
 let love = document.querySelector("#love");
@@ -29,7 +29,6 @@ let SlidePlaces = async () => {
 
     let buttonAddFavorite = document.createElement("i");
 
-    buttonAddFavorite.id = "addFavorite"
     buttonAddFavorite.className = "fa-solid fa-heart";
     content.appendChild(buttonAddFavorite);
 
@@ -45,21 +44,21 @@ let SlidePlaces = async () => {
       console.log(favoritesPlaces);
 
       //function to watch the favorites places!
-      yourFovites.addEventListener("click", function () {
+      yourFavorites.addEventListener("click", function () {
         bars.style.display = "";
         tinderCards.innerHTML = "";
         love.style.display = "none";
 
-       favoritesPlaces.forEach((places) => {
-         //clean array before show the new favorite places
-         let contentFavorites = document.createElement("div");
-         contentFavorites.innerHTML = `
+        favoritesPlaces.forEach((places) => {
+          //clean array before show the new favorite places
+          let contentFavorites = document.createElement("div");
+          contentFavorites.innerHTML = `
                 <h4>${places.name}</h4>
                 <img src="${places.img}" >
                 <a href="${places.direction}">check on map</a>
             `;
-         favoritesPlacesBody.append(contentFavorites);
-       });
+          favoritesPlacesBody.append(contentFavorites);
+        });
       });
     });
   });
