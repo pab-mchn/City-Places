@@ -1,8 +1,6 @@
 // capture the html tags
 let barPlaces = document.querySelector("#bar-places");
 let clubPlaces = document.querySelector("#club-places");
-let bars = document.querySelector("#bars");
-let clubs = document.querySelector("#clubs");
 let yourFovites = document.querySelector("#yourFovites");
 let slidePlaces = document.querySelector("#slidePlaces");
 let tinderCards = document.querySelector("#tinder--cards");
@@ -39,13 +37,3 @@ const fetchClub = async () => {
 };
 
 fetchClub();
-
-bars.addEventListener("click", () => {
-  document.querySelector("#club-places").innerHTML = "";
-  fetchBar();
-});
-
-clubs.addEventListener("click", () => {
-  document.querySelector("#bar-places").innerHTML = "";
-  fetchClub();
-});
