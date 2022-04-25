@@ -50,7 +50,7 @@ let SlidePlaces = async () => {
         title: "Added Favorite",
         showConfirmButton: false,
         timer: 1000,
-        iconColor: '#EAD42F',
+        iconColor: "#f9433dcc",
       });
 
       //function to watch the favorites places!
