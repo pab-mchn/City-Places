@@ -12,18 +12,21 @@ nav{
   display:flex;
   justify-content: space-between;
   align-items: center;
-  padding:10px;
+  padding:15px;
+}
+
+nav > a {
+  color: #fff
+}
+
+.fa-solid{
+  color: #fff;
+  font-size: 20px;
 }
 
 #backSlider{
-  margin-right: auto;
+  margin-right:auto;
 }
-
-
-#yourFavorites {
-  margin-right: 20px;
-}
-
 /*bars styles*/
 .container-bar-places {
   margin-top: 10vh;
@@ -155,4 +158,13 @@ text-align: center;
 .tinder--buttons{
     margin-top: 470px;
     z-index: 1;
+}
+
+#love:active{
+    font-size: 25px;
+    color:black
+}
+.fa-heart:active{
+  color:#f9433dcc;
+  font-size: 25px;;
 }
