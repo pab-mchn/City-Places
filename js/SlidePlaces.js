@@ -44,6 +44,15 @@ let SlidePlaces = async () => {
       });
       console.log(favoritesPlaces);
 
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Added Favorite",
+        showConfirmButton: false,
+        timer: 1000,
+        iconColor: '#EAD42F',
+      });
+
       //function to watch the favorites places!
       yourFavorites.addEventListener("click", function () {
         backHome.style.display = "none";
