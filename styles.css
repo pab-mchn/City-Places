@@ -12,12 +12,11 @@ nav{
   display:flex;
   justify-content: space-between;
   align-items: center;
+  padding:10px;
 }
-#backHome{
-  margin-left: 20px;
-}
+
 #backSlider{
-  margin-right: 505px;
+  margin-right: auto;
 }
 
 
