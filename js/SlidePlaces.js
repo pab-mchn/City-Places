@@ -48,7 +48,7 @@ let SlidePlaces = async () => {
 
       //function to watch the favorites places!
       yourFavorites.addEventListener("click", function () {
-        backHome.style.display = "noe";
+        backHome.style.display = "none";
         bars.style.display = "";
         backSlider.style.display = "";
         tinderCards.innerHTML = "";
@@ -183,6 +183,8 @@ backSlider.addEventListener("click", () => {
   favoritesPlacesBody.innerHTML = "";
   bars.style.display = "none";
   love.style.display = "";
+  backHome.style.display = "";
+  backSlider.style.display = "none";
 
   SlidePlaces();
 });
