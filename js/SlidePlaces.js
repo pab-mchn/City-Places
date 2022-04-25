@@ -3,13 +3,11 @@ let tinderContainer = document.querySelector(".tinder");
 let allCards = document.querySelectorAll(".tinder--card");
 let yourFavorites = document.querySelector("#yourFavorites");
 let favoritesPlacesBody = document.querySelector("#favoritesPlacesBody");
-let bars = document.querySelector("#bars");
 let love = document.querySelector("#love");
 let buttonAddFavorite = document.querySelector("#addFavorite");
 let backSlider = document.querySelector("#backSlider");
 let backHome = document.querySelector("#backHome");
 
-bars.style.display = "none";
 backSlider.style.display = "none";
 
 
@@ -49,7 +47,6 @@ let SlidePlaces = async () => {
       //function to watch the favorites places!
       yourFavorites.addEventListener("click", function () {
         backHome.style.display = "none";
-        bars.style.display = "";
         backSlider.style.display = "";
         tinderCards.innerHTML = "";
         love.style.display = "none";
@@ -181,7 +178,6 @@ love.addEventListener("click", loveListener);
 
 backSlider.addEventListener("click", () => {
   favoritesPlacesBody.innerHTML = "";
-  bars.style.display = "none";
   love.style.display = "";
   backHome.style.display = "";
   backSlider.style.display = "none";
