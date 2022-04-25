@@ -126,11 +126,13 @@ text-align: center;
   text-align: center;
   display: flex;
   justify-content: center;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 .tinder--card {
   display: inline;
-  height: 65vh;
-  width: 400px;
+  height: 450px;
+  width: 350px;
   background: #EAD42F;
   border-radius: 8px;
   position: absolute;
@@ -141,6 +143,7 @@ text-align: center;
   cursor: -webkit-grab;
   cursor: -moz-grab;
   cursor: grab;
+
 }
 
 .moving.tinder--card {

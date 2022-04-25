@@ -49,7 +49,7 @@ let SlidePlaces = async () => {
         icon: "success",
         title: "Added Favorite",
         showConfirmButton: false,
-        timer: 1000,
+        timer: 800,
         iconColor: "#f9433dcc",
       });
 
