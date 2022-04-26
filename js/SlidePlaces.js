@@ -53,6 +53,11 @@ let SlidePlaces = async () => {
         iconColor: "#f9433dcc",
       });
 
+      localStorage.setItem("datos", JSON.stringify(favoritesPlaces));
+
+      let savefavorites = localStorage.getItem("datos");
+      console.log(JSON.parse(savefavorites));
+
       //function to watch the favorites places!
       yourFavorites.addEventListener("click", function () {
         backHome.style.display = "none";
@@ -60,7 +65,7 @@ let SlidePlaces = async () => {
         tinderCards.innerHTML = "";
         love.style.display = "none";
 
-        favoritesPlaces.forEach((places) => {
+        savefavorites.forEach((places) => {
           //clean array before show the new favorite places
           let contentFavorites = document.createElement("div");
           contentFavorites.innerHTML = `
