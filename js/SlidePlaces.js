@@ -34,6 +34,7 @@ let SlidePlaces = async () => {
     content.appendChild(buttonAddFavorite);
 
     let favoritesPlaces = [];
+
     //push the favorites places in favoritePlaces array
     buttonAddFavorite.addEventListener("click", function () {
       favoritesPlaces.push({
@@ -41,7 +42,7 @@ let SlidePlaces = async () => {
         name: bar.barName,
         img: bar.barImage,
         direction: bar.BarMapUrl,
-      });
+    });
       console.log(favoritesPlaces);
 
       Swal.fire({
@@ -53,10 +54,18 @@ let SlidePlaces = async () => {
         iconColor: "#f9433dcc",
       });
 
-      localStorage.setItem("datos", JSON.stringify(favoritesPlaces));
 
-      let savefavorites = localStorage.getItem("datos");
-      console.log(JSON.parse(savefavorites));
+       const guardarLocal = (clave, valor) => {
+         localStorage.setItem(clave, valor);
+       };
+
+       // o almacenar array completo
+       guardarLocal("listaProductos", JSON.stringify(favoritesPlaces));
+
+
+       console.log(favoritesPlaces)
+
+
 
       //function to watch the favorites places!
       yourFavorites.addEventListener("click", function () {
@@ -65,7 +74,7 @@ let SlidePlaces = async () => {
         tinderCards.innerHTML = "";
         love.style.display = "none";
 
-        savefavorites.forEach((places) => {
+        favoritesPlaces.forEach((places) => {
           //clean array before show the new favorite places
           let contentFavorites = document.createElement("div");
           contentFavorites.innerHTML = `
