@@ -60,7 +60,7 @@ let SlidePlaces = async () => {
          localStorage.setItem(clave, valor);
        };
 
-       // o almacenar array completo
+       // complete favorite array in local
        saveLocal("listaProductos", JSON.stringify(favoritesPlaces));
 
 
