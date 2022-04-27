@@ -54,13 +54,14 @@ let SlidePlaces = async () => {
         iconColor: "#f9433dcc",
       });
 
+      //save products in local
 
-       const guardarLocal = (clave, valor) => {
+       const saveLocal = (clave, valor) => {
          localStorage.setItem(clave, valor);
        };
 
        // o almacenar array completo
-       guardarLocal("listaProductos", JSON.stringify(favoritesPlaces));
+       saveLocal("listaProductos", JSON.stringify(favoritesPlaces));
 
 
        console.log(favoritesPlaces)
