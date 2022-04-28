@@ -35,16 +35,28 @@ let SlidePlaces = async () => {
 
     let favoritesPlaces = [];
 
-    //push the favorites places in favoritePlaces array
+    //function for save the productos in the storage
     buttonAddFavorite.addEventListener("click", function () {
+      const saveLocal = (clave, valor) => {
+        localStorage.setItem(clave, valor);
+      };
+
+      //push the favorites places in favoritePlaces array
       favoritesPlaces.push({
         id: bar.id,
         name: bar.barName,
         img: bar.barImage,
         direction: bar.BarMapUrl,
-    });
+      });
+
+      //save all the favorites bars in the local
+      for (const bar of favoritesPlaces) {
+        saveLocal(bar.id, JSON.stringify(bar));
+      }
+
       console.log(favoritesPlaces);
 
+      //alert say that the favoritas was saved(Sweet alert library)
       Swal.fire({
         position: "top-end",
         icon: "success",
@@ -53,20 +65,6 @@ let SlidePlaces = async () => {
         timer: 800,
         iconColor: "#f9433dcc",
       });
-
-      //save products in local
-
-       const saveLocal = (clave, valor) => {
-         localStorage.setItem(clave, valor);
-       };
-
-       // complete favorite array in local
-       saveLocal("listaProductos", JSON.stringify(favoritesPlaces));
-
-
-       console.log(favoritesPlaces)
-
-
 
       //function to watch the favorites places!
       yourFavorites.addEventListener("click", function () {
@@ -82,6 +80,7 @@ let SlidePlaces = async () => {
                 <h4>${places.name}</h4>
                 <img src="${places.img}" >
                 <a href="${places.direction}">check on map</a>
+
             `;
           favoritesPlacesBody.append(contentFavorites);
         });
