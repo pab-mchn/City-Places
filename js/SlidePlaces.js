@@ -10,7 +10,6 @@ let backHome = document.querySelector("#backHome");
 
 backSlider.style.display = "none";
 
-
 //function to create slide Barplaces
 let SlidePlaces = async () => {
   const res = await fetch("dataBar.json");
@@ -49,15 +48,20 @@ let SlidePlaces = async () => {
 
       console.log(favoritesPlaces);
 
-         const saveLocal = (clave, valor) => {
-           localStorage.setItem(clave, valor);
-         };
+      const saveLocal = (clave, valor) => {
+        localStorage.setItem(clave, valor);
+      };
 
-         //save all the favorites bars in the local
-         for (const bar of favoritesPlaces) {
-           saveLocal(bar.id, JSON.stringify(bar));
-         }
+      //save all the favorites bars in the local
+      for (const bar of favoritesPlaces) {
+        saveLocal(bar.id, JSON.stringify(bar));
+      }
 
+      //try to get the storage values and show in favorites
+      const almacenados = JSON.parse(localStorage.getItem(bar.id));
+      let favoritoslocal = [];
+      favoritoslocal.push(almacenados);
+      console.log(favoritoslocal);
 
       //alert say that the favorites was saved(Sweet alert library)
       Swal.fire({
@@ -76,7 +80,8 @@ let SlidePlaces = async () => {
         tinderCards.innerHTML = "";
         love.style.display = "none";
 
-        favoritesPlaces.forEach((places) => {
+        //favorites local or favoriteplaces?
+        favoritoslocal.forEach((places) => {
           //clean array before show the new favorite places
           let contentFavorites = document.createElement("div");
           contentFavorites.innerHTML = `
@@ -92,7 +97,6 @@ let SlidePlaces = async () => {
   });
 };
 SlidePlaces();
-
 
 //implementation of the hammer.js library for slider
 function initCards(card, index) {
