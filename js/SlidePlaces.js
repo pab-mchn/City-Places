@@ -15,6 +15,7 @@ backSlider.style.display = "none";
 let SlidePlaces = async () => {
   const res = await fetch("dataBar.json");
   const data = await res.json();
+
   data.forEach((bar) => {
     let content = document.createElement("div");
     content.className = "tinder--card";
@@ -33,14 +34,11 @@ let SlidePlaces = async () => {
     buttonAddFavorite.className = "fa-solid fa-heart";
     content.appendChild(buttonAddFavorite);
 
+    //start favorites places
     let favoritesPlaces = [];
 
     //function for save the productos in the storage
     buttonAddFavorite.addEventListener("click", function () {
-      const saveLocal = (clave, valor) => {
-        localStorage.setItem(clave, valor);
-      };
-
       //push the favorites places in favoritePlaces array
       favoritesPlaces.push({
         id: bar.id,
@@ -49,14 +47,19 @@ let SlidePlaces = async () => {
         direction: bar.BarMapUrl,
       });
 
-      //save all the favorites bars in the local
-      for (const bar of favoritesPlaces) {
-        saveLocal(bar.id, JSON.stringify(bar));
-      }
-
       console.log(favoritesPlaces);
 
-      //alert say that the favoritas was saved(Sweet alert library)
+         const saveLocal = (clave, valor) => {
+           localStorage.setItem(clave, valor);
+         };
+
+         //save all the favorites bars in the local
+         for (const bar of favoritesPlaces) {
+           saveLocal(bar.id, JSON.stringify(bar));
+         }
+
+
+      //alert say that the favorites was saved(Sweet alert library)
       Swal.fire({
         position: "top-end",
         icon: "success",
