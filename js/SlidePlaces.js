@@ -50,21 +50,6 @@ let SlidePlaces = async () => {
 
       console.log(favoritesPlaces);
 
-      const saveLocal = (clave, valor) => {
-        localStorage.setItem(clave, valor);
-      };
-
-      //save all the favorites bars in the local
-      for (const bar of favoritesPlaces) {
-        saveLocal(bar.id, JSON.stringify(bar));
-      }
-
-      //try to get the storage values and show in favorites
-      const almacenados = JSON.parse(localStorage.getItem(bar.id));
-      let favoritoslocal = [];
-      favoritoslocal.push(almacenados);
-      console.log(favoritoslocal);
-
       //alert say that the favorites was saved(Sweet alert library)
       Swal.fire({
         position: "top-end",
@@ -85,17 +70,17 @@ let SlidePlaces = async () => {
         love.style.display = "none";
 
         //favorites local or favoriteplaces?
-        favoritoslocal.forEach((places) => {
-          //clean array before show the new favorite places
-          let contentFavorites = document.createElement("div");
-          contentFavorites.innerHTML = `
+      favoritesPlaces.forEach((places) => {
+        //clean array before show the new favorite places
+        let contentFavorites = document.createElement("div");
+        contentFavorites.innerHTML = `
                 <h4>${places.name}</h4>
                 <img src="${places.img}" >
                 <a href="${places.direction}">check on map</a>
 
             `;
-          favoritesPlacesBody.append(contentFavorites);
-        });
+        favoritesPlacesBody.append(contentFavorites);
+      });
       });
     });
   });
