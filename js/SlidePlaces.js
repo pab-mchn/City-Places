@@ -12,6 +12,8 @@ let backHome = document.querySelector("#backHome");
 backSlider.style.display = "none";
 yourFavoritesView.style.display = "none";
 
+let favoritesPlaces = [];
+
 //function to create slide Barplaces
 let SlidePlaces = async () => {
   const res = await fetch("dataBar.json");
@@ -36,11 +38,11 @@ let SlidePlaces = async () => {
     content.appendChild(buttonAddFavorite);
 
     //start favorites places
-    let favoritesPlaces = [];
 
     //function for save the productos in the storage
     buttonAddFavorite.addEventListener("click", function () {
       //push the favorites places in favoritePlaces array
+
       favoritesPlaces.push({
         id: bar.id,
         name: bar.barName,
@@ -49,6 +51,14 @@ let SlidePlaces = async () => {
       });
 
       console.log(favoritesPlaces);
+
+      //save all the favoritesPlaces array in the local storage
+
+      const saveLocalStorage = (clave, valor) => {
+        localStorage.setItem(clave, valor);
+      };
+
+      saveLocalStorage("listFavorites", JSON.stringify(favoritesPlaces));
 
       //alert say that the favorites was saved(Sweet alert library)
       Swal.fire({
@@ -68,13 +78,17 @@ let SlidePlaces = async () => {
         backSlider.style.display = "";
         tinderCards.innerHTML = "";
         love.style.display = "none";
+        JSON.stringify(localStorage.getItem("listFavorites"));
 
-        //favorites local or favoriteplaces?
+        //clean the favorite places in dom before show the foreach in the new version of array
+        favoritesPlacesBody.innerHTML = "";
+
         favoritesPlaces.forEach((places) => {
           //clean array before show the new favorite places
           let contentFavorites = document.createElement("div");
 
           contentFavorites.className = "card-product";
+
           contentFavorites.innerHTML = `
                 <img src="${places.img}" >
                 <div class="card-product-infos">
