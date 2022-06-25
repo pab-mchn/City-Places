@@ -3,30 +3,30 @@ body {
   margin: 0;
 }
 
-h2{
+h2 {
   color: #999;
   margin-left: 15px;
 }
-nav{
+nav {
   height: 45px;
-  background-color: #EAD42F;
-  display:flex;
+  background-color: #ead42f;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding:15px;
+  padding: 15px;
 }
 
 nav > a {
-  color: #fff
+  color: #fff;
 }
 
-.fa-solid{
+.fa-solid {
   color: #fff;
   font-size: 20px;
 }
 
-#backSlider{
-  margin-right:auto;
+#backSlider {
+  margin-right: auto;
 }
 /*bars styles*/
 .container-bar-places {
@@ -34,35 +34,35 @@ nav > a {
 }
 
 #bar-places {
-height: 200px;
-overflow-y: hidden;
-overflow-x: auto;
-width: auto;
-padding: 10px;
-white-space: nowrap;
+  height: 200px;
+  overflow-y: hidden;
+  overflow-x: auto;
+  width: auto;
+  padding: 10px;
+  white-space: nowrap;
 }
 
 #bar-places > div {
-width: 100px;
-height: 50px;
-margin: 0 20px 0 0;
-padding: 0px;
-position: relative;
-display: inline;
-text-align: center;
+  width: 100px;
+  height: 50px;
+  margin: 0 20px 0 0;
+  padding: 0px;
+  position: relative;
+  display: inline;
+  text-align: center;
 }
 
-#bar-places>div > img {
- border-radius: 10px;
+#bar-places > div > img {
+  border-radius: 10px;
 }
 
 #bar-places > div > a {
-position: absolute;
-bottom: 65px;
-left: 50%;
-transform: translate(-50%, -50%);
-color: #fff;
-text-decoration: none;
+  position: absolute;
+  bottom: 65px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-decoration: none;
 }
 
 ::-webkit-scrollbar {
@@ -82,20 +82,19 @@ text-decoration: none;
   width: auto;
   padding: 10px;
   white-space: nowrap;
-
 }
 
-#club-places>div {
-width: 100px;
-height: 60px;
-margin: 0 20px 0 0;
-padding: 0px;
-position: relative;
-display: inline;
-text-align: center;
+#club-places > div {
+  width: 100px;
+  height: 60px;
+  margin: 0 20px 0 0;
+  padding: 0px;
+  position: relative;
+  display: inline;
+  text-align: center;
 }
 
-#club-places>div>a {
+#club-places > div > a {
   position: absolute;
   bottom: 100px;
   left: 50%;
@@ -104,7 +103,7 @@ text-align: center;
   text-decoration: none;
 }
 
-#club-places>div>img{
+#club-places > div > img {
   height: 300px;
   width: 220px;
   border-radius: 10px;
@@ -122,7 +121,7 @@ text-align: center;
   transition: opacity 0.1s ease-in-out;
 }
 
-#tinder--cards{
+#tinder--cards {
   text-align: center;
   display: flex;
   justify-content: center;
@@ -133,7 +132,7 @@ text-align: center;
   display: inline;
   height: 450px;
   width: 350px;
-  background: #EAD42F;
+  background: #ead42f;
   border-radius: 8px;
   position: absolute;
   top: 10vh;
@@ -143,7 +142,6 @@ text-align: center;
   cursor: -webkit-grab;
   cursor: -moz-grab;
   cursor: grab;
-
 }
 
 .moving.tinder--card {
@@ -159,16 +157,57 @@ text-align: center;
   height: 300px;
 }
 
-.tinder--buttons{
-    margin-top: 470px;
-    z-index: 1;
+.tinder--buttons {
+  margin-top: 470px;
+  z-index: 1;
 }
 
-#love:active{
-    font-size: 25px;
-    color:black
+#love:active {
+  font-size: 25px;
+  color: black;
 }
-.fa-heart:active{
-  color:#f9433dcc;
-  font-size: 25px;;
+.fa-heart:active {
+  color: #f9433dcc;
+  font-size: 25px;
+}
+
+/*favorites places styles*/
+#favoritesPlacesBody {
+  margin: 5%;
+}
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product a {
+  font-size: 12px;
+  line-height: 1.8;
+  opacity: 0.7;
+  margin-bottom: 0;
+  margin-top: 16px;
+  text-decoration: none;
+  color: #ead42f;
+  font-weight: bold;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
 }
